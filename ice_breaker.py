@@ -4,6 +4,7 @@ from langchain.chains import LLMChain
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 from third_parties.linkedin import scrape_linkedin_profile
+from agents.linkedin_lookup_agent import lookup as linkedin_lookup_agent
 
 load_dotenv()
 
@@ -23,8 +24,12 @@ if __name__ == '__main__':
 
     chain = LLMChain(llm=llm, prompt=summary_prompt_template)
     
-    # linkedin_data = scrape_linkedin_profile(linkendin_profile_url="//any URL")
-    linkedin_data = scrape_linkedin_profile()
+    linkedin_profile_url = linkedin_lookup_agent(name="Ameya Patil IBM")
 
-    # res_final = chain.invoke(input={"information": linkedin_data})
-    print(chain.run(information=linkedin_data))
+    # linkedin_data = scrape_linkedin_profile(linkendin_profile_url="//any URL")
+    # linkedin_data = scrape_linkedin_profile(
+    #     linkedin_profile_url=linkedin_profile_url
+    # )
+
+    # print(chain.run(information=linkedin_data))
+    print(linkedin_profile_url)
