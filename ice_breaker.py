@@ -32,15 +32,16 @@ def ice_breaker(name: str) -> Tuple[PersonIntel, str]:
     
     linkedin_profile_url = linkedin_lookup_agent(name=name)
 
+    """ Uncomment the below linkedin_profile_url to pass linkedin URL to scrape_linkedin_profile(). Please note you will also 
+        need to make changes to linkedin.py. Currently we are testing on standard sample response."""
     linkedin_data = scrape_linkedin_profile(
-        """ Uncomment the below line to pass linkedin URL to scrape_linkedin_profile(). Please note you will also 
-         need to make changes to linkedin.py. Currently we are testing on standard sample response."""
-        # linkedin_profile_url=linkedin_profile_url
+        linkendin_profile_url=linkedin_profile_url
     )
 
     result = chain.run(information=linkedin_data)
     print(person_intel_parsor.parse(result))
     print(linkedin_profile_url)
+    print(linkedin_data.get("profile_pic_url"))
     return person_intel_parsor.parse(result), linkedin_data.get("profile_pic_url")
 
 if __name__ == '__main__':
