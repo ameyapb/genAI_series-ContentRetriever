@@ -1,7 +1,9 @@
 # Content-Retriever
+![image](https://github.com/ameyapb/genAI_series-ContentRetriever/assets/67974891/4fe20e49-badb-43f5-95a2-da3e4608ff81)
+<sub>(This project primarily focuses on its backend functionality. Please overlook the simplicity of the frontend. Contributions aimed at improving the frontend are highly welcome.)</sub>
 
 ## Overview
-This application leverages AI-powered language models to generate conversation starters and insights based on LinkedIn profiles. It utilizes GPT-3.5 Turbo model from OpenAI to generate summaries, interesting facts, topics of interest, and ice breakers for individuals based on their LinkedIn profiles along with Langchain.
+This application harnesses the power of AI-driven language models to craft engaging conversation starters and glean insights from LinkedIn profiles. Powered by the GPT-3.5 Turbo model from OpenAI, it generates concise summaries, intriguing facts, potential topics of interest, and ice breakers tailored to individuals based on their LinkedIn profiles. The application relies on a combination of Langchain, Proxycurl, and SERP API to streamline the data retrieval process, ensuring efficient and accurate analysis.
 
 ## Installation
 1. Clone this repository:
